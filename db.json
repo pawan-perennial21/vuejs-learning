@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "name": "Pawan Patidar",
+      "email": "pawan@gmail.com",
+      "password": "pawan@123",
+      "id": 1
+    },
+    {
+      "name": "Mangesh Landge",
+      "email": "mangesh@gmail.com",
+      "password": "mangesh@123",
+      "id": 2
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "restaurantName": "Dominos",
+      "price": 250,
+      "product": "pizza"
+    },
+    {
+      "restaurantName": "Veg Point",
+      "price": "250",
+      "product": "Samosa",
+      "id": 2
+    },
+    {
+      "restaurantName": "Swami smarth",
+      "price": "120",
+      "product": "Rice",
+      "id": 3
+    },
+    {
+      "restaurantName": "Swami",
+      "price": "125",
+      "product": "Sambhar",
+      "id": 4
+    }
+  ]
+}

@@ -1,32 +1,131 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+    <div id="app">
+        <Header v-if="showHeader" />
+        <!-- <Form/> -->
+        <!-- <Todo/> -->
+        <!-- <Parent/> -->
+        <div class="container">
+            <router-view />
+        </div>
+        <!-- <teleport v></teleport> -->
+        <Footer v-if="showHeader" />
+    </div>
 </template>
-
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+// import Todo from "./components/Todo/Todo.vue";
+// import Form from "./components/Form/Form.vue"
+// import Parent from "./components/FlowData/Parent.vue"
+export default {
+    components: {
+        Header,
+        // Todo,
+        // Form,
+        // Parent,
+        Footer,
+    },
+    computed: {
+        showHeader() {
+            return (
+                this.$route.path !== "/login" &&
+                this.$route.path !== "/register"
+            );
+        },
+        showFooter() {
+            return (
+                this.$route.path !== "/login" &&
+                this.$route.path !== "/register"
+            );
+        },
+    },
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #0a2647;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 nav {
-  padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #0a2647;
+    padding: 10px;
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 10px;
+}
+nav > button {
+    margin: 0 12px;
+    cursor: pointer;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+    color: #2c74b3;
+}
+.formWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.restaurantWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 88vh;
+}
+.restaurantForm,
+.registerForm,
+.loginForm {
+    width: 35%;
+}
+.restaurantForm label,
+.registerForm label,
+.loginForm label {
+    display: flex;
+    font-weight: 700;
+}
+.restaurantForm input,
+.registerForm input,
+.loginForm input {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 100%;
+    height: 32px;
+}
+.restaurantForm button,
+.registerForm button,
+.loginForm button {
+    margin: 10px auto;
+    border: none;
+    outline: none;
+    background: #144272;
+    padding: 5px;
+    width: 100%;
+    height: 35px;
+    font-weight: bold;
+    color: #ffffff;
 }
 </style>
