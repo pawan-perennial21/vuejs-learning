@@ -3,13 +3,13 @@
     {
       "name": "Pawan Patidar",
       "email": "pawan@gmail.com",
-      "password": "pawan@123",
+      "password": "pawan@123P",
       "id": 1
     },
     {
       "name": "Mangesh Landge",
       "email": "mangesh@gmail.com",
-      "password": "mangesh@123",
+      "password": "mangesh@123M",
       "id": 2
     }
   ],
@@ -37,6 +37,12 @@
       "price": "125",
       "product": "Sambhar",
       "id": 4
+    },
+    {
+      "restaurantName": "Dhawarka Daba",
+      "price": "120",
+      "product": "Taali",
+      "id": 5
     }
   ]
 }

@@ -6,7 +6,7 @@
 
 <script>
 // import Academid from '../components/learn/Academid.vue'
-import ReastaurantListVue from "../components/Restaurant/ReastaurantList.vue";
+import ReastaurantListVue from "../components/Restaurant/RestaurantList.vue";
 export default {
     name: "About",
     components: {

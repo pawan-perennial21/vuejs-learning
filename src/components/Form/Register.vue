@@ -31,9 +31,9 @@
                 autocomplete="off"
                 placeholder="please enter your password"
             />
-            <!-- <span class="error" v-if="formErrors.password">{{
+            <span class="error" v-if="formErrors.password">{{
                 formErrors.password
-            }}</span> -->
+            }}</span>
             <button type="submit">Register</button>
             <div class="register-here">
                 <p>Please login here</p>
@@ -69,12 +69,25 @@ export default {
             } else if (!this.isValidEmail(this.formData.email)) {
                 this.formErrors.email = "Invalid email format.";
             }
+            if (!this.formData.password) {
+                this.formErrors.password = "Password is required.";
+            } else if (
+                !this.isValidPassword(this.formData.password)
+            ) {
+                this.formErrors.password =
+                    "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.";
+            }
 
             return Object.keys(this.formErrors).length === 0;
         },
         isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
+        },
+        isValidPassword(password) {
+            const passwordRegex =
+                /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            return passwordRegex.test(password);
         },
         async submitForm() {
             if (this.validateForm()) {

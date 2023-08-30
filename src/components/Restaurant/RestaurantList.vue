@@ -12,7 +12,7 @@
 
 <script>
 import axios from "axios";
-import ReastaurantCardVue from "./ReastaurantCard.vue";
+import ReastaurantCardVue from "./RestaurantCard.vue";
 export default {
     name: "ReastaurantList",
     data() {

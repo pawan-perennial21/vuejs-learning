@@ -60,12 +60,25 @@ export default {
     margin: 0 auto;
     padding: 0 20px;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a2647;
+    padding: 5px 10px;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+}
+.header-content p {
+    color: #ffffff;
+}
 nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: #0a2647;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 nav a {
@@ -73,9 +86,15 @@ nav a {
     color: #ffffff;
     margin-left: 10px;
 }
-nav > button {
+.header-content > button {
     margin: 0 12px;
     cursor: pointer;
+    color: #ffffff;
+    padding: 5px 10px;
+    background: #144272;
+    outline: none;
+    border: none;
+    border-radius: 5px;
 }
 
 nav a.router-link-exact-active {

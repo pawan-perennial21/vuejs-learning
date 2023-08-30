@@ -21,9 +21,9 @@
                 autocomplete="off"
                 placeholder="please enter your password"
             />
-            <!-- <span class="error" v-if="formErrors.password">{{
+            <span class="error" v-if="formErrors.password">{{
                 formErrors.password
-            }}</span> -->
+            }}</span>
             <button type="submit">Login</button>
             <div class="register-here">
                 <p>Please register here</p>
@@ -55,15 +55,28 @@ export default {
                 this.formErrors.email = "Invalid email format.";
             }
 
+            if (!this.formData.password) {
+                this.formErrors.password = "Password is required.";
+            } else if (
+                !this.isValidPassword(this.formData.password)
+            ) {
+                this.formErrors.password =
+                    "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.";
+            }
+
             return Object.keys(this.formErrors).length === 0;
         },
         isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         },
+        isValidPassword(password) {
+            const passwordRegex =
+                /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            return passwordRegex.test(password);
+        },
         async submitForm() {
             if (this.validateForm()) {
-                console.log("submitForm");
                 const response = await axios.get(
                     `http://localhost:3000/users?email=${this.formData.email}&password=${this.formData.password}`
                 );
