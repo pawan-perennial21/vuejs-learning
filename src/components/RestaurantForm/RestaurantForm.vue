@@ -54,7 +54,7 @@ export default {
         async submitForm() {
             console.log("submitForm");
             const response = await axios.post(
-                "http://localhost:3000/restaurants",
+                "http://localhost:3005/restaurants",
                 {
                     restaurantName:
                         this.restaurantData.restaurantName,

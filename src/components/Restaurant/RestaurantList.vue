@@ -25,7 +25,7 @@ export default {
     },
     async mounted() {
         const response = await axios.get(
-            "http://localhost:3000/restaurants"
+            "http://localhost:3005/restaurants"
         );
         if (response.status === 200) {
             this.restaurantList = response.data;

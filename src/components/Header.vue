@@ -2,8 +2,11 @@
     <header>
         <nav>
             <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
-            <router-link to="/login">Login</router-link>
+            <router-link to="/about">Add Restaurant</router-link>
+
+            <router-link v-if="!isLogin" to="/login"
+                >Login</router-link
+            >
         </nav>
         <div class="header-content">
             <p>{{ user }}</p>
@@ -13,6 +16,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
     name: "Header",
     data() {
@@ -26,10 +30,15 @@ export default {
             this.$router.push({ name: "login" });
         },
     },
+
+    // console.log({isLogin});
+    computed: mapState(["isLogin"]),
     mounted() {
-        let userName = JSON.parse(localStorage.getItem("userInfo")).name;
+        let userName = JSON.parse(
+            localStorage.getItem("userInfo")
+        ).name;
         if (userName) {
-            this.user = userName.split(' ')[0];
+            this.user = userName.split(" ")[0];
         }
     },
 };

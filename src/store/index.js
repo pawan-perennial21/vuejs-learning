@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         loading: false,
+        isLogin: false,
         userData: [],
         postData: [],
         postDataDetails: {},
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     mutations: {
         setUserData(state, data) {
             state.userData = data;
+        },
+        setIsLogin(state, payload) {
+            state.isLogin = payload;
         },
         setPostData(state, data1) {
             state.postData = data1;
@@ -36,6 +40,7 @@ export default new Vuex.Store({
                 "https://jsonplaceholder.typicode.com/photos"
             );
             commit("setUserData", res.data);
+            commit("setIsLogin", true);
         },
         async getPostInfo({ commit, state }, payload) {
             const res = await axios(
@@ -51,7 +56,7 @@ export default new Vuex.Store({
                 );
                 commit("setPostDetails", res.data);
                 commit("setLoading", false);
-              } catch (error) {
+            } catch (error) {
                 console.log(error);
                 commit("setLoading", false);
             }

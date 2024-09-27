@@ -4,18 +4,24 @@
       "name": "Pawan Patidar",
       "email": "pawan@gmail.com",
       "password": "pawan@123P",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "Mangesh Landge",
       "email": "mangesh@gmail.com",
       "password": "mangesh@123M",
-      "id": 2
+      "id": "2"
+    },
+    {
+      "id": "e67f",
+      "name": "Admin",
+      "email": "admin@yopmail.com",
+      "password": "Admin@123"
     }
   ],
   "restaurants": [
     {
-      "id": 1,
+      "id": "1",
       "restaurantName": "Dominos",
       "price": 250,
       "product": "pizza"
@@ -24,25 +30,25 @@
       "restaurantName": "Veg Point",
       "price": "250",
       "product": "Samosa",
-      "id": 2
+      "id": "2"
     },
     {
       "restaurantName": "Swami smarth",
       "price": "120",
       "product": "Rice",
-      "id": 3
+      "id": "3"
     },
     {
       "restaurantName": "Swami",
       "price": "125",
       "product": "Sambhar",
-      "id": 4
+      "id": "4"
     },
     {
       "restaurantName": "Dhawarka Daba",
       "price": "120",
       "product": "Taali",
-      "id": 5
+      "id": "5"
     }
   ]
 }
